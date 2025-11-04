@@ -1,9 +1,8 @@
 import { Component, signal } from '@angular/core';
-import { CharacterSheet } from './character-sheet/character-sheet';
 
 @Component({
   selector: 'app-root',
-  imports: [CharacterSheet],
+  imports: [],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
