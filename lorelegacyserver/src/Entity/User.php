@@ -50,7 +50,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     #[ORM\OneToMany(targetEntity: Campaign::class, mappedBy: 'gamemaster')]
     #[Groups(['user:read', 'user:write'])]
-    #[MaxDepth(2)]
+    #[MaxDepth(1)]
     private Collection $mastered_campaigns;
 
     /**
@@ -63,7 +63,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column]
     #[Groups(['user:read', 'user:write'])]
-    private ?bool $is_active = false;
+    private bool $is_active;
 
     public function __construct()
     {
@@ -209,7 +209,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function isActive(): ?bool
+    public function getIsActive(): ?bool
     {
         return $this->is_active;
     }

@@ -16,24 +16,28 @@ class AppFixtures extends Fixture
         $user->setUsername('admin');
         $user->setRoles(['ROLE_ADMIN']);
         $user->setPassword('1234');
+        $user->setIsActive(true);
         $manager->persist($user);
 
         $user1 = new User();
         $user1->setUsername('gamemaster01');
         $user1->setRoles(['ROLE_USER']);
         $user1->setPassword('1234');
+        $user1->setIsActive(true);
         $manager->persist($user1);
 
         $user2 = new User();
         $user2->setUsername('player1');
         $user2->setRoles(['ROLE_USER']);
         $user2->setPassword('1234');
+        $user2->setIsActive(true);
         $manager->persist($user2);
 
         $user3 = new User();
         $user3->setUsername('player2');
         $user3->setRoles(['ROLE_USER']);
         $user3->setPassword('1234');
+        $user3->setIsActive(false);
         $manager->persist($user3);
 
         $campaign = new Campaign();
